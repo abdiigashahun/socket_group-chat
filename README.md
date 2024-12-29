@@ -24,7 +24,7 @@ To run the Group Chat application locally, follow these steps:
 1. Clone the repository
 bash
 Copy code
-git clone https://github.com/your-username/socket_group-chat.git
+git clone https://github.com/abdi-mangashahun/socket_group-chat.git
 cd group-chat
 2. Compile the Java files
 Ensure that you have Java Development Kit (JDK) installed (preferably JDK 8 or later).

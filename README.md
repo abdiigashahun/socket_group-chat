@@ -1,108 +1,109 @@
-Socket Group Chat (Java)
-Welcome to Socket Group Chat — a real-time group messaging application built with Java using Sockets for communication. This application allows users to join different chat rooms, send and receive messages in real-time, and interact with other users seamlessly.
+Group Chat (Java)
+Welcome to Group Chat — a real-time, interactive group messaging application built with Java using Sockets for communication. This app allows users to join chat rooms, send messages in real-time, and interact with others through a simple server-client architecture.
 
 Features
 Real-time messaging: Messages are sent and received instantly using TCP Sockets.
-Multiple chat rooms: Users can join different chat rooms and send messages within them.
-Usernames: Each user can set their own username when they join the chat.
-Simple, lightweight UI: Built using Java with basic Swing or console-based UI (depending on your choice).
-Scalable: Handle multiple users and rooms efficiently.
+Multiple chat rooms: Users can join various chat rooms to communicate with others.
+Custom usernames: Users can set their own usernames when they join the chat.
+Simple UI: A basic console-based interface (or optional Swing UI) to interact with the chat.
+Scalable server: The server can handle multiple simultaneous clients using multithreading.
 Demo
-If you would like to see a live demo of this app, feel free to replace this with a link to your project (e.g., a hosted version, or a recorded video).
+If you would like to see a demo of this app in action, replace this with a link to your hosted version or a recorded demo.
 
-Socket Group Chat Demo
+Group Chat Demo
 
 Technologies Used
-Java: Programming language used to build the application.
-Sockets: Used for real-time communication between the client and server (TCP/UDP Sockets).
-Swing (optional): If using a graphical user interface (GUI), Swing is used for the frontend interface.
-Multithreading: Each client runs in its own thread to handle multiple simultaneous connections.
+Java: The programming language used for both the server and client.
+Sockets: Used for real-time communication between the server and the clients (TCP protocol).
+Swing (optional): For creating a graphical user interface (GUI) if applicable.
+Multithreading: To handle multiple simultaneous client connections.
+Console-based UI: If you're using a console-based UI, users can interact via the command line.
 Installation
-To run this application locally, follow these steps:
+To run the Group Chat application locally, follow these steps:
 
 1. Clone the repository
 bash
 Copy code
-git clone https://github.com/your-username/socket-group-chat-java.git
-cd socket-group-chat-java
+git clone https://github.com/your-username/group-chat.git
+cd group-chat
 2. Compile the Java files
-Make sure you have Java Development Kit (JDK) installed (preferably JDK 8 or later).
+Ensure that you have Java Development Kit (JDK) installed (preferably JDK 8 or later).
 
 bash
 Copy code
 javac *.java
-3. Run the server
-To start the chat server, run the following command in your terminal:
+3. Start the server
+To run the server, which will handle client connections, execute the following command in your terminal:
 
 bash
 Copy code
 java ChatServer
-This will start the server, which listens for incoming connections from clients.
+By default, the server listens for incoming connections on port 12345. You can change this in the ChatServer.java file if needed.
 
 4. Run the client
-To connect a client to the server, open a new terminal window and run the following command:
+To start a client, open another terminal window and run:
 
 bash
 Copy code
 java ChatClient
-You’ll be prompted to enter your username and the chat room you want to join.
+You will be prompted to enter your username and the chat room you want to join. After that, you'll be able to start chatting with others in real-time.
 
 5. Start chatting!
-Once connected, you can send and receive messages in real-time with other users in the same chat room.
+Once you're connected, you can send and receive messages in the selected chat room. Messages will be broadcast to all users currently in the room.
 
 Usage
-1. Join a Room
-When you first launch the client, you will be asked to enter your username and choose a chat room. You can join an existing room or create a new one.
+1. Join a Chat Room
+When you first run the client, you'll be asked to enter a username and a chat room name. If the room doesn't exist, it will be created automatically.
 
 2. Send and Receive Messages
-Once in the room, you can send messages to everyone in that room. The application supports real-time message updates, so everyone in the room will see the messages instantly.
+Messages are exchanged in real-time with all participants in the same chat room. All users connected to the room will instantly see the new messages.
 
-3. Multiple Chat Rooms
-You can join different chat rooms. To switch between rooms, just type a command and reconnect to another room.
+3. Multiple Rooms
+You can join different chat rooms. Simply type a command to switch rooms or create a new one.
 
 4. Exit the Chat
-You can leave a chat room at any time. Simply close the client or disconnect from the server.
+To leave the chat room, type /exit in the chat, and you will be disconnected.
 
 File Structure
 bash
 Copy code
-/socket-group-chat-java
+/group-chat
   ├── /src
-  │   ├── ChatServer.java      # Main server file for handling connections
-  │   ├── ChatClient.java      # Main client file for the user interface
-  │   ├── ClientHandler.java   # Handles communication between server and client
-  │   └── ChatRoom.java        # Manages individual chat rooms
-  ├── /resources
-  │   └── (optional assets or settings)
+  │   ├── ChatServer.java      # Main server file for managing connections
+  │   ├── ChatClient.java      # Main client file for handling user interaction
+  │   ├── ClientHandler.java   # Manages communication between server and individual clients
+  │   └── ChatRoom.java        # Manages individual chat rooms and users
   ├── README.md               # This file
   └── LICENSE                  # License information
 Contributing
-If you'd like to contribute to Socket Group Chat:
+If you would like to contribute to Group Chat, feel free to fork the repository and submit a pull request. Here's how you can contribute:
 
 Fork the repository.
 Clone your fork to your local machine.
 Create a new branch for your feature (git checkout -b feature-name).
 Commit your changes (git commit -am 'Add new feature').
-Push your changes (git push origin feature-name).
-Create a Pull Request to merge your changes into the main repository.
-Bug reports and feature requests
-Feel free to open an issue if you encounter bugs or have ideas for new features.
+Push your changes to your fork (git push origin feature-name).
+Open a Pull Request to merge your changes into the main repository.
+Reporting Issues & Feature Requests
+If you encounter bugs or have new feature ideas, please open an issue. We welcome feedback and contributions!
 
 License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
 Acknowledgments
-Java Sockets: For handling real-time communication between clients and the server.
-Swing (if used): For building a simple, graphical user interface (GUI) to interact with the chat.
-Multithreading: Allows the server to handle multiple clients simultaneously.
-Additional Notes:
-Server-Client Communication: The ChatServer.java listens on a specific port and handles incoming connections. It then creates a ClientHandler thread for each connected client.
-Multiple Chat Rooms: ChatRoom.java is responsible for creating and managing chat rooms. Each room can have multiple clients connected to it.
-Concurrency: The server uses multithreading to handle multiple clients simultaneously. Each client connects in its own thread, allowing for independent communication without blocking others.
-Summary
-In this Java-based Socket Group Chat application:
+Java Sockets: For handling real-time communication via TCP connections between the server and clients.
+Swing (optional): If you're using a graphical user interface for the chat.
+Multithreading: Used to manage multiple clients connected to the server simultaneously.
+Additional Notes
+Server-Client Communication:
 
-The server listens for client connections and distributes messages across the network.
-Each client communicates with the server using Sockets (TCP/IP).
-Clients can join multiple chat rooms and send/receive messages in real-time.
-This project is a great way to get familiar with Java Sockets, multithreading, and network programming concepts while building a real-time chat application.
+The ChatServer.java listens for client connections on a specified port.
+The server uses multithreading to handle multiple clients at once.
+Each connected client is managed in its own ClientHandler thread.
+Chat Room Management: The ChatRoom.java class is responsible for creating and managing chat rooms. It handles user connections, room membership, and message broadcasting.
+
+Basic Commands:
+
+/exit: Disconnect from the chat room.
+/list: List all active chat rooms (if applicable).
+/join <room_name>: Join a specific room.

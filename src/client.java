@@ -11,7 +11,7 @@ public class client {
             BufferedReader serverInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter serverOutput = new PrintWriter(socket.getOutputStream(), true);
 
-            // Thread to receive messages from the server
+            // Thread to receive messages from the servers
             Thread receiveThread = new Thread(() -> {
                 try {
                     String message;
